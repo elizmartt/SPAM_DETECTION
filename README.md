@@ -42,43 +42,36 @@
 Term Frequency-ն (TF) ցույց է տալիս, թե որքան հաճախ է մեկ բառը հայտնվում որոշակի փաստաթղթում: Այն հաշվարկվում է հետևյալ կերպ.
 ### Term Frequency (TF) Function
 
-The term frequency (TF) function is defined as follows:
+![image](https://github.com/user-attachments/assets/677a8059-7d17-4e5a-bb2a-2c46d27a7182)
 
-\[
-TF(t, d) = \frac{\text{Counting of Term Occurrences in Document}}{\text{Term Frequency in Document}}
-\]
 
-Where:
-- \( t \) is the term (word) of interest.
-- \( d \) is the document containing the term.
 
-​
- 
+
 
 
 #### 2. **Inverse Document Frequency (IDF)**
 
 IDF-ն ցույց է տալիս, թե որքան կարևոր է բառը բոլոր փաստաթղթերի համեմատ։ Այն հաշվի է առնում, թե որքան քիչ է հանդիպում այդ բառը ամբողջ փաստաթղթերի մեջ։ Որքան ավելի քիչ է հանդիպում բառը այլ փաստաթղթերում, այնքան ավելի մեծ է նրա արժեքը:
 
-IDF հաշվարկվում է հետևյալ կերպ.
+![image](https://github.com/user-attachments/assets/232600f9-85c3-4ba1-b1a9-ac22042e5932)
 
-\[
-\text{IDF}(t, D) = \log\left(\frac{|D|}{1 + \text{Document Frequency}(t)}\right)
-\]
-
-Որտեղ `|D|` բոլոր փաստաթղթերի քանակն է, իսկ `Document Frequency(t)`-ն ցույց է տալիս, թե որքան փաստաթղթերում է հանդիպում տվյալ բառը:
 
 #### 3. **TF-IDF**
 
-Հաշվարկվում է TF և IDF-ի գումարով.
 
-\[
-\text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D)
-\]
 
-Այսպիսով, **TF-IDF**-ը տալիս է յուրաքանչյուր բառի կարևորությունը՝ հաշվի առնելով թե քանի անգամ է բառը հանդիպում տվյալ փաստաթղթում, նաև որքան հազվադեպ է այն հանդիպում մյուս փաստաթղթերում:
+![image](https://github.com/user-attachments/assets/7df17a23-2d67-4686-9698-689867e8d1d9)
+
+
+
 
 ---
+№№№ ** Գծային ռեգրեսիա (Linear Regression) **
+![image](https://github.com/user-attachments/assets/df656e19-04f8-4b2f-ad53-3e367cea6467)
+![image](https://github.com/user-attachments/assets/b86e0600-2119-47d6-9013-de8e407050a3)
+![image](https://github.com/user-attachments/assets/e63e9f51-67ef-4817-8d8f-caa1d7eb5dcf)
+
+
 
 ###  **Լոգիստիկ Ռեգրեսիա (Logistic Regression)**
 
@@ -86,50 +79,23 @@ IDF հաշվարկվում է հետևյալ կերպ.
 
 #### 1. **Լոգիստիկ Ֆունկցիա**
 
-Լոգիստիկ ֆունկցիան հետևյալ տեսքն ունի:
 
-\[
-P(y = 1 | X) = \frac{1}{1 + e^{-z}}
-\]
+![image](https://github.com/user-attachments/assets/9dacec3b-4fcc-4b91-8a39-c01e5c3e74f2)
+![image](https://github.com/user-attachments/assets/c2e94c72-ad7b-4274-8f76-651eb1dcf100)
 
-Որտեղ՝  
-- \( P(y = 1 | X) \) ՝ հիպոթեզի հավանականությունն է, որ տրված փաստաթուղթը կլինի `spam`։  
-- \( z \)՝ գրադիենտի և կշռերի պարամետրերի միավորն է, որը հաշվում է հետևյալ կերպ՝  
-  \[
-  z = b + \sum_{i=1}^{n} w_i x_i
-  \]  
-  որտեղ `b`-ն բայասն է, \( w_i \)-ները կշիռներն են, իսկ \( x_i \)-ները՝ տվյալ վեկտորի բաղադրիչները։
+
 
 #### 2. **Կորստի ֆունկցիա (Loss Function)**
 
-Մոդելը սովորում է նվազագույն կորստի ֆունկցիային՝ օգտագործելով **լոգիստիկ ռեգրեսիայի** կորսգտի ֆունկցիան, որը հաճախ կոչվում է **խաչաձև ռիսկի կորսի (cross-entropy loss)**։
+![image](https://github.com/user-attachments/assets/2eb655a6-9959-44a4-995c-eb6a44f11792)
 
-\[
-\text{Loss}(y, \hat{y}) = - \left( y \log(\hat{y}) + (1 - y) \log(1 - \hat{y}) \right)
-\]
-
-Որտեղ՝  
-- \( y \)՝ իրական պիտակն է (spam կամ ham)։
-- \( \hat{y} \)՝ մոդելի կանխատեսված հավանականությունն է։
 
 #### 3. **Gradient Descent**
+![image](https://github.com/user-attachments/assets/99ae63fa-a22e-4771-94ee-e70fecd0cf05)
+![image](https://github.com/user-attachments/assets/6ec85f24-c6a1-4100-9a39-73330c3d7ca1)
 
-Լոգիստիկ ռեգրեսիան սովորում է **Gradient Descent** մեթոդով՝ նպատակ ունենալով նվազագույնի հասցնել կորստի ֆունկցիան՝ յուրաքանչյուր պարբերությունում թարմացնելով կշիռները (weights)։
 
-Կշիռների թարմացումը կատարում է հետևյալ կերպ.
 
-\[
-w_i := w_i - \alpha \frac{\partial \text{Loss}}{\partial w_i}
-\]
-\[
-b := b - \alpha \frac{\partial \text{Loss}}{\partial b}
-\]
-
-Որտեղ՝  
-- \( \alpha \)՝ ուսուցման արագությունն է (learning rate)։
-- \( \frac{\partial \text{Loss}}{\partial w_i} \)՝ կորսի ֆունկցիայի պարբերական ածանցը \( w_i \)-ի նկատմամբ։
-
----
 
 ### **Կոդի Պատմություն**
 
