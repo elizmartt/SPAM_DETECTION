@@ -40,8 +40,21 @@
 #### 1. **Term Frequency (TF)**
 
 Term Frequency-ն (TF) ցույց է տալիս, թե որքան հաճախ է մեկ բառը հայտնվում որոշակի փաստաթղթում: Այն հաշվարկվում է հետևյալ կերպ.
+### Term Frequency (TF) Function
 
-![image](https://github.com/user-attachments/assets/98b2505a-6a73-4d7d-ba5f-9ebc2275fb5a)
+The term frequency (TF) function is defined as follows:
+
+\[
+TF(t, d) = \frac{\text{Counting of Term Occurrences in Document}}{\text{Term Frequency in Document}}
+\]
+
+Where:
+- \( t \) is the term (word) of interest.
+- \( d \) is the document containing the term.
+
+​
+ 
+
 
 #### 2. **Inverse Document Frequency (IDF)**
 
